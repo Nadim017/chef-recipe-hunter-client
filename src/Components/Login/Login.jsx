@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Providers/AuthProviders';
 
 const Login = () => {
-  const { signIn, GoogleSignIn } = useContext(authContext);
+  const [error, setError] = useState('');
+
+  const { signIn, GoogleSignIn, githubSign } = useContext(authContext);
   const navigate = useNavigate();
   const from = location.state?.from?.pathName || '/';
   const handleSignIn = (event) => {
@@ -16,12 +18,25 @@ const Login = () => {
         const loggedIn = result.user;
         console.log(loggedIn);
         navigate(from, { replace: true });
+
+        setError('');
       })
       .catch((err) => {
         console.error(err);
+        setError('email or password is incorrect');
       });
 
     GoogleSignIn()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+      })
+      .catch((err) => {
+        console.log('Error', err.message);
+      });
+
+    githubSign()
       .then((result) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
@@ -58,9 +73,9 @@ const Login = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
+
+        <p>{error ? 'email or password wrong' : ''}</p>
+        <br />
         <Button variant="primary" type="submit">
           Login
         </Button>

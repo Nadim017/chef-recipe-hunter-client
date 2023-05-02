@@ -32,7 +32,7 @@ const SingleChef = ({ singleChef }) => {
           </Card.Body>
           <Card.Footer>
             <Button className="w-100" variant="primary">
-              View Recipes Button
+              View Recipes
             </Button>
           </Card.Footer>
         </Card>

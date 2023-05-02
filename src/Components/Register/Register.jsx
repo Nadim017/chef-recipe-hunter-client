@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { authContext } from '../../Providers/AuthProviders';
 
 const Register = () => {
+  const [error, setError] = useState('');
   const { createUser } = useContext(authContext);
 
   const handleRegister = (event) => {
@@ -11,6 +12,9 @@ const Register = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
+    // if (password < 6) {
+    //   setError('Please enter password 6 or than 6 character');
+    // }
 
     createUser(email, password)
       .then((result) => {
@@ -19,6 +23,7 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error);
+        setError('password should be 6 or than 6 character');
       });
   };
 
@@ -67,17 +72,7 @@ const Register = () => {
             placeholder="Photo url"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check
-            type="checkbox"
-            name="accept"
-            label={
-              <>
-                Accept <Link to="/terms">"terms and conditions"</Link>
-              </>
-            }
-          />
-        </Form.Group>
+        <p>{error}</p>
         <Button variant="primary" type="submit ">
           Register
         </Button>

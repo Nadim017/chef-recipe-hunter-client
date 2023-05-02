@@ -23,6 +23,9 @@ const Header = () => {
               <Link className="text-white" to="/login">
                 Login
               </Link>
+              <Link className=" ms-3 text-white" to="/register">
+                Register
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
