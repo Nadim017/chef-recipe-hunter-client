@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Providers/AuthProviders';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Login = () => {
   const [error, setError] = useState('');
@@ -35,7 +37,8 @@ const Login = () => {
       .catch((err) => {
         console.log('Error', err.message);
       });
-
+  };
+  const handleGithubSignIn = () => {
     githubSign()
       .then((result) => {
         const loggedInUser = result.user;
@@ -79,6 +82,14 @@ const Login = () => {
         <Button variant="primary" type="submit">
           Login
         </Button>
+        <Button
+          className="ms-3"
+          onClick={handleGithubSignIn}
+          variant="secondary"
+          type="submit"
+        >
+          Github SignIn
+        </Button>
 
         <br />
 
@@ -86,8 +97,6 @@ const Login = () => {
         <Form.Text className="text-secondary mt-3">
           Don't Have an Account ?<Link to="/register">Register</Link>
         </Form.Text>
-        <Form.Text className="text-success"></Form.Text>
-        <Form.Text className="text-danger"></Form.Text>
       </Form>
     </Container>
   );
