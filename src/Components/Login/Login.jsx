@@ -3,9 +3,12 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <Container className="mt-3">
-      <Form className="w-50 mx-auto">
+      <Form onSubmit={handleSubmit} className="w-50 mx-auto">
         <h3>Please Login</h3>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -31,6 +34,14 @@ const Login = () => {
         </Form.Group>
         <Button variant="primary" type="submit">
           Login
+        </Button>
+
+        <br />
+        <Button className="mt-2 me-2" variant="primary" type="submit">
+          Google Sign-in
+        </Button>
+        <Button className="mt-2 me-2" variant="primary" type="submit">
+          GitHub Sign-in
         </Button>
         <br />
         <Form.Text className="text-secondary">
