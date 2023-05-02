@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { authContext } from '../../Providers/AuthProviders';
 
 const Login = () => {
-  const handleSubmit = (event) => {
+  const { signIn } = useContext(authContext);
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathName || '/';
+  const handleSignIn = (event) => {
     event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    signIn(email, password)
+      .then((result) => {
+        const loggedIn = result.user;
+        console.log(loggedIn);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
   return (
     <Container className="mt-3">
       <Form
-        onSubmit={handleSubmit}
+        onSubmit={handleSignIn}
         className="w-50 mx-auto bg-light rounded p-4 shadow"
       >
         <h3 className="text-center text-primary">Please Login</h3>

@@ -8,19 +8,21 @@ import './Header.css';
 const Header = () => {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand className="">Chef Recipe Hunter</Navbar.Brand>
+          <Navbar.Brand className="text-white">Chef Recipe Hunter</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link className="" to="/">
+              <Link className="text-white" to="/">
                 Home
               </Link>
-              <Link className="mx-3" to="/blog">
+              <Link className="mx-3 text-white" to="/blog">
                 Blog
               </Link>
-              <Link to="/login">Login</Link>
+              <Link className="text-white" to="/login">
+                Login
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
