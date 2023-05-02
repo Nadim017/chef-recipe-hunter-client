@@ -24,7 +24,10 @@ const Register = () => {
 
   return (
     <Container className="mt-3 ">
-      <Form onSubmit={handleRegister} className="w-50 mx-auto">
+      <Form
+        onSubmit={handleRegister}
+        className="w-50 mx-auto bg-light rounded p-4 shadow"
+      >
         <h3 className="text-center">Please Register</h3>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Your Name</Form.Label>

@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Providers/AuthProviders';
 
 const Login = () => {
-  const { signIn } = useContext(authContext);
+  const { signIn, GoogleSignIn } = useContext(authContext);
   const navigate = useNavigate();
   const from = location.state?.from?.pathName || '/';
   const handleSignIn = (event) => {
@@ -20,7 +20,18 @@ const Login = () => {
       .catch((err) => {
         console.error(err);
       });
+
+    GoogleSignIn()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+      })
+      .catch((err) => {
+        console.log('Error', err.message);
+      });
   };
+
   return (
     <Container className="mt-3">
       <Form
@@ -55,12 +66,7 @@ const Login = () => {
         </Button>
 
         <br />
-        <Button className="mt-2 me-2" variant="info" type="submit">
-          Google Sign-in
-        </Button>
-        <Button className="mt-2 me-2" variant="secondary" type="submit">
-          GitHub Sign-in
-        </Button>
+
         <br />
         <Form.Text className="text-secondary mt-3">
           Don't Have an Account ?<Link to="/register">Register</Link>
