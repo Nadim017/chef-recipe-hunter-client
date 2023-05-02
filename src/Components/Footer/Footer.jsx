@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Footer = () => {
   return (
-    <div className="mt-3">
+    <div className="mt-5">
       <footer className="bg-light py-3">
         <Container>
           <Row>
@@ -19,7 +19,7 @@ const Footer = () => {
               <ul className="list-unstyled">
                 <li>
                   <a href="mailto:contact@yourwebsite.com">
-                    contact@yourwebsite.com
+                    contact@chefrecipehunting.com
                   </a>
                 </li>
                 <li>
@@ -53,7 +53,7 @@ const Footer = () => {
           </Row>
           <hr />
           <p className="text-center">
-            © {new Date().getFullYear()} Your Website
+            © {new Date().getFullYear()} chef recipe hunting
           </p>
         </Container>
       </footer>

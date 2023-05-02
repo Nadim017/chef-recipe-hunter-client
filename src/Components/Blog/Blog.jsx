@@ -1,14 +1,16 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 const Blog = () => {
   return (
-    <div className="p-5">
-      <h4>
+    <Container className="p-5">
+      <h5>
         1. Tell us the differences between uncontrolled and controlled
         components.
-      </h4>
-      <h4>
-        Ans:
+      </h5>
+      <br />
+      <p>
+        <span>Ans:</span>
         <p>
           Uncontrolled components are those where the form data is handled by
           the DOM itself, while in controlled components, the form data is
@@ -19,10 +21,12 @@ const Blog = () => {
           complex forms, whereas controlled components provide more control and
           validation but can be more verbose.
         </p>
-      </h4>
+      </p>
       <br />
-      <h4>2. How to validate React props using PropTypes?</h4>
-      <h4>
+      <h5>2. How to validate React props using PropTypes?</h5>
+      <p>
+        {' '}
+        <br />
         Ans :
         <p>
           PropTypes is a built-in feature in React that allows you to specify
@@ -30,10 +34,10 @@ const Blog = () => {
           helps you catch bugs early by validating that the props passed to a
           component match the expected types and shapes.{' '}
         </p>
-      </h4>
+      </p>
       <br />
-      <h4>3. Tell us the difference between nodejs and express js.</h4>
-      <h4>
+      <h5>3. Tell us the difference between nodejs and express js.</h5>
+      <p>
         Ans : <br />
         Node.js vs Express.js:
         <p>
@@ -45,10 +49,10 @@ const Blog = () => {
           process of building web applications by providing middleware for
           handling requests and responses, routing, and other common tasks.
         </p>
-      </h4>
+      </p>
       <br />
-      <h4>4. What is a custom hook, and why will you create a custom hook?</h4>
-      <h4>
+      <h5>4. What is a custom hook, and why will you create a custom hook?</h5>
+      <p>
         Ans :
         <p>
           Custom Hooks: A custom hook is a function that allows you to extract
@@ -58,8 +62,8 @@ const Blog = () => {
           between multiple components, or to simplify the management of stateful
           values.
         </p>
-      </h4>
-    </div>
+      </p>
+    </Container>
   );
 };
 
