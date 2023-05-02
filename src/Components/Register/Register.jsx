@@ -16,15 +16,7 @@ const Register = () => {
             placeholder="Enter name"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Photo URL</Form.Label>
-          <Form.Control
-            name="photo"
-            required
-            type="text"
-            placeholder="Photo url"
-          />
-        </Form.Group>
+
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -42,6 +34,15 @@ const Register = () => {
             required
             type="password"
             placeholder="Password"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Photo URL</Form.Label>
+          <Form.Control
+            name="photo"
+            required
+            type="text"
+            placeholder="Photo url"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
