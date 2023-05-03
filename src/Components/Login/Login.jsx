@@ -27,7 +27,8 @@ const Login = () => {
         console.error(err);
         setError('email or password is incorrect');
       });
-
+  };
+  const signWithGoogle = () => {
     GoogleSignIn()
       .then((result) => {
         const loggedInUser = result.user;
@@ -81,6 +82,14 @@ const Login = () => {
         <br />
         <Button variant="primary" type="submit">
           Login
+        </Button>
+        <Button
+          className="ms-3"
+          onClick={signWithGoogle}
+          variant="info"
+          type="submit"
+        >
+          Google Sign In
         </Button>
         <Button
           className="ms-3"

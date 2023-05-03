@@ -4,6 +4,10 @@ import './ChefRecipes.css';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Container } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+import CardGroup from 'react-bootstrap/CardGroup';
 
 const ChefRecipes = () => {
   const { id } = useParams();
@@ -36,6 +40,35 @@ const ChefRecipes = () => {
               </ListGroup.Item>
             </ListGroup>
           </Card>
+        </div>
+
+        {/*card */}
+        <div className="text-center mt-5">
+          <CardGroup className="w-50 mx-auto">
+            <Card>
+              <Card.Body>
+                <div className="recipe_container">
+                  {chefRecipes.recipeNames.map((recipe) => (
+                    <div key={recipe.recipeName}>
+                      <div>
+                        Recipe Name :<br></br>
+                        {recipe.recipeName} :
+                        {recipe.ingredients.map((element) => (
+                          <div key={element}>
+                            <p>
+                              <FontAwesomeIcon icon={faCheck} />
+                              {element}
+                            </p>
+                          </div>
+                        ))}
+                        <button className="btn btn-primary">Favorite</button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Card.Body>
+            </Card>
+          </CardGroup>
         </div>
       </Container>
     </div>
