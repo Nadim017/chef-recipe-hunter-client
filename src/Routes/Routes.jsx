@@ -20,7 +20,9 @@ const router = createBrowserRouter([
         path: '/:id',
         element: <ChefRecipes></ChefRecipes>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/chef/${params.id}`),
+          fetch(
+            `https://chef-recipe-hunting-server-pi.vercel.app/chef/${params.id}`
+          ),
       },
       {
         path: 'blog',

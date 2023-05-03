@@ -6,7 +6,7 @@ import { Carousel, Col, Container, Row } from 'react-bootstrap';
 const Home = () => {
   const [chef, setChef] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/chef')
+    fetch('https://chef-recipe-hunting-server-pi.vercel.app/chef')
       .then((response) => response.json())
       .then((data) => setChef(data));
   }, []);
