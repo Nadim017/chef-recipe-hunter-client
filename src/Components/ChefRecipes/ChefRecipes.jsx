@@ -13,7 +13,6 @@ const ChefRecipes = () => {
   const { id } = useParams();
   const chefRecipes = useLoaderData();
 
-  console.log('chessRecipes', chefRecipes);
   return (
     <div className="mt-3 mb-3">
       <Container>
@@ -51,17 +50,16 @@ const ChefRecipes = () => {
                   {chefRecipes.recipeNames.map((recipe) => (
                     <div key={recipe.recipeName}>
                       <div>
-                        Recipe Name :<br></br>
-                        {recipe.recipeName} :
+                        <h5> Recipe Name :</h5>
+                        {recipe.recipeName} <br /> <h5>Element :</h5>
                         {recipe.ingredients.map((element) => (
                           <div key={element}>
-                            <p>
+                            <h6>
                               <FontAwesomeIcon icon={faCheck} />
                               {element}
-                            </p>
+                            </h6>
                           </div>
                         ))}
-                        <button className="btn btn-primary">Favorite</button>
                       </div>
                     </div>
                   ))}

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Providers/AuthProviders';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -32,8 +32,9 @@ const Login = () => {
     GoogleSignIn()
       .then((result) => {
         const loggedInUser = result.user;
+        navigate(from, { replace: true });
         console.log(loggedInUser);
-        setUser(loggedInUser);
+        // setUser(loggedInUser);
       })
       .catch((err) => {
         console.log('Error', err.message);
@@ -43,8 +44,8 @@ const Login = () => {
     githubSign()
       .then((result) => {
         const loggedInUser = result.user;
+        navigate(from, { replace: true });
         console.log(loggedInUser);
-        setUser(loggedInUser);
       })
       .catch((err) => {
         console.log('Error', err.message);
@@ -83,19 +84,13 @@ const Login = () => {
         <Button variant="primary" type="submit">
           Login
         </Button>
-        <Button
-          className="ms-3"
-          onClick={signWithGoogle}
-          variant="info"
-          type="submit"
-        >
+        <Button className="ms-3" onClick={signWithGoogle} variant="info">
           Google Sign In
         </Button>
         <Button
           className="ms-3"
           onClick={handleGithubSignIn}
           variant="secondary"
-          type="submit"
         >
           Github SignIn
         </Button>

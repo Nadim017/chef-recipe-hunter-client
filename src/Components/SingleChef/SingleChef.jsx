@@ -5,6 +5,8 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import './SingleChef.css';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingleChef = ({ singleChef }) => {
   const {
@@ -16,6 +18,9 @@ const SingleChef = ({ singleChef }) => {
     recipeNames,
     yearsOfExperience,
   } = singleChef;
+  const handleFavorite = () => {
+    toast(`Roasted Chicken Thigh is my favorite recipe`);
+  };
   return (
     <Container>
       <CardGroup>
@@ -30,6 +35,11 @@ const SingleChef = ({ singleChef }) => {
             <p>Years of experience: {yearsOfExperience}</p>
             <p>Numbers of recipes: {numbersOfRecipes}</p>
             <p>Likes : {likes}</p>
+            <div className="text-center">
+              <button className="btn btn-info" onClick={handleFavorite}>
+                Favorite
+              </button>
+            </div>
           </Card.Body>
           <Card.Footer>
             <Link to={`/${id}`}>
@@ -40,6 +50,7 @@ const SingleChef = ({ singleChef }) => {
           </Card.Footer>
         </Card>
       </CardGroup>
+      <ToastContainer />
     </Container>
   );
 };
