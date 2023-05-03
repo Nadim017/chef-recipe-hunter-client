@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import './SingleChef.css';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 const SingleChef = ({ singleChef }) => {
   const {
@@ -31,9 +32,11 @@ const SingleChef = ({ singleChef }) => {
             <p>Likes : {likes}</p>
           </Card.Body>
           <Card.Footer>
-            <Button className="w-100" variant="primary">
-              View Recipes
-            </Button>
+            <Link to={`/${id}`}>
+              <Button className="w-100" variant="primary">
+                View Recipes
+              </Button>
+            </Link>
           </Card.Footer>
         </Card>
       </CardGroup>
