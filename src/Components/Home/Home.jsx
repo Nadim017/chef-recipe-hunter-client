@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SingleChef from '../SingleChef/SingleChef';
 import './Home.css';
 import { Carousel, Col, Container, Row } from 'react-bootstrap';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
   const [chef, setChef] = useState([]);
@@ -58,6 +59,7 @@ const Home = () => {
           <SingleChef singleChef={singleChef} key={singleChef.id}></SingleChef>
         ))}
       </div>
+      <Contact></Contact>
     </div>
   );
 };

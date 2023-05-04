@@ -19,23 +19,24 @@ const Header = () => {
   };
   return (
     <div>
-      <Navbar bg="dark" expand="lg">
+      <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand className="text-white">Chef Recipe Hunter</Navbar.Brand>
+          <Navbar.Brand className="text-black ">
+            Chef Recipe Hunter
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link to="/">Home</Link>
+              <Link className="mx-3 text-black" to="/">
+                Home
+              </Link>
 
-              <Link className="mx-3 text-white" to="/blog">
+              <Link className="mx-3 text-black" to="/blog">
                 Blog
               </Link>
               {user ? (
                 <div>
-                  <FontAwesomeIcon
-                    className="mx-2 text-bg-dark"
-                    icon={faUser}
-                  />
+                  <FontAwesomeIcon className="mx-2 text-dark" icon={faUser} />
                   <button onClick={handleLogOut} className="btn btn-primary">
                     Log out
                   </button>

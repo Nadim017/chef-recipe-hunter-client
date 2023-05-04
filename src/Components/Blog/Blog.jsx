@@ -4,6 +4,9 @@ import { Container } from 'react-bootstrap';
 const Blog = () => {
   return (
     <Container className="p-5">
+      <p>
+        <button className="btn btn-info">Download pdf</button>
+      </p>
       <h5>
         1. Tell us the differences between uncontrolled and controlled
         components.
