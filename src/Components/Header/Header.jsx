@@ -37,7 +37,7 @@ const Header = () => {
               {user ? (
                 <div>
                   <FontAwesomeIcon
-                    className="mx-2 text-dark"
+                    className="mx-2  icon"
                     icon={faUser}
                     title="nadim mahamud"
                   />
