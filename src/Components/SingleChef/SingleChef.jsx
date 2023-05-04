@@ -19,7 +19,7 @@ const SingleChef = ({ singleChef }) => {
     yearsOfExperience,
   } = singleChef;
   const handleFavorite = () => {
-    toast(`Roasted Chicken Thigh is my favorite recipe`);
+    toast(`This item is added to your favorite recipe`);
   };
   return (
     <Container>

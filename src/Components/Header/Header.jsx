@@ -36,17 +36,21 @@ const Header = () => {
               </Link>
               {user ? (
                 <div>
-                  <FontAwesomeIcon className="mx-2 text-dark" icon={faUser} />
+                  <FontAwesomeIcon
+                    className="mx-2 text-dark"
+                    icon={faUser}
+                    title="nadim mahamud"
+                  />
                   <button onClick={handleLogOut} className="btn btn-primary">
                     Log out
                   </button>
                 </div>
               ) : (
                 <div>
-                  <Link className="text-white" to="/login">
+                  <Link className="text-dark" to="/login">
                     Login
                   </Link>
-                  <Link className=" ms-3 text-white" to="/register">
+                  <Link className=" ms-3 text-dark" to="/register">
                     Register
                   </Link>
                 </div>

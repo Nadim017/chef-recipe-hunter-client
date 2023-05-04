@@ -10,6 +10,7 @@
 8. footer section created
 9. loading spinner added
 10. toast added
-11. footer added
+11. contact section added
+12. footer added
 
 Website Link => https://chef-recipe-hunting-b04f2.web.app/
