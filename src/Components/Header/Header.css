@@ -1,6 +1,6 @@
-a {
-  text-decoration: none;
+Nav a {
   font-size: 20px;
+  text-decoration: none;
 }
 .icon {
   height: 50px;
@@ -9,4 +9,9 @@ a {
   background-color: black;
   padding: 5px;
   color: white;
+}
+Nav a.active {
+  text-decoration: underline;
+  font-weight: bold;
+  color: red;
 }

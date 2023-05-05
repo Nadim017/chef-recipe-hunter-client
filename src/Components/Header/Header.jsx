@@ -28,16 +28,16 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav ">
             <Nav className="ms-auto">
-              <Link className="mx-3 text-black" to="/">
+              <NavLink className="mx-3 text-black" to="/">
                 Home
-              </Link>
+              </NavLink>
 
-              <Link className="mx-3 text-black" to="/blog">
+              <NavLink className="mx-3 text-black" to="/blog">
                 Blog
-              </Link>
-              <Link className="mx-3 text-black" to="/contact">
+              </NavLink>
+              <NavLink className="mx-3 text-black" to="/contact">
                 Contact Us
-              </Link>
+              </NavLink>
               {user ? (
                 <div>
                   <img
@@ -52,12 +52,12 @@ const Header = () => {
                 </div>
               ) : (
                 <div>
-                  <Link className="text-dark" to="/login">
+                  <NavLink className="text-dark" to="/login">
                     Login
-                  </Link>
-                  <Link className=" ms-3 text-dark" to="/register">
+                  </NavLink>
+                  <NavLink className=" ms-3 text-dark" to="/register">
                     Register
-                  </Link>
+                  </NavLink>
                 </div>
               )}
             </Nav>
