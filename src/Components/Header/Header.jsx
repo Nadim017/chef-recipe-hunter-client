@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -33,6 +33,9 @@ const Header = () => {
 
               <Link className="mx-3 text-black" to="/blog">
                 Blog
+              </Link>
+              <Link className="mx-3 text-black" to="/contact">
+                Contact Us
               </Link>
               {user ? (
                 <div>

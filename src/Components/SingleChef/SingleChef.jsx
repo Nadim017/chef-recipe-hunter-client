@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SingleChef = ({ singleChef }) => {
+  const [toggleFavorite, setToggleFavorite] = useState(false);
   const {
     id,
     chefName,
@@ -20,6 +21,7 @@ const SingleChef = ({ singleChef }) => {
   } = singleChef;
   const handleFavorite = () => {
     toast(`This item is added to your favorite recipe`);
+    setToggleFavorite(!toggleFavorite);
   };
   return (
     <Container>
@@ -36,7 +38,12 @@ const SingleChef = ({ singleChef }) => {
             <p>Numbers of recipes: {numbersOfRecipes}</p>
             <p>Likes : {likes}</p>
             <div className="text-center">
-              <button className="btn btn-info" onClick={handleFavorite}>
+              <button
+                className={`btn btn-info ${
+                  toggleFavorite ? 'disabled btn-secondary' : ''
+                }`}
+                onClick={handleFavorite}
+              >
                 Favorite
               </button>
             </div>

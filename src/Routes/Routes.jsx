@@ -8,6 +8,7 @@ import Register from '../Components/Register/Register';
 import Error from '../Components/Error/Error';
 import ChefRecipes from '../Components/ChefRecipes/ChefRecipes';
 import PrivateRoute from './PrivateRoute';
+import Contact from '../Components/Contact/Contact';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <Register></Register>,
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>,
       },
 
       {
