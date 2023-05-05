@@ -17,6 +17,7 @@ const Header = () => {
         console.error(err);
       });
   };
+
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -25,7 +26,7 @@ const Header = () => {
             Chef Recipe Hunter
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav ">
             <Nav className="ms-auto">
               <Link className="mx-3 text-black" to="/">
                 Home
@@ -39,10 +40,11 @@ const Header = () => {
               </Link>
               {user ? (
                 <div>
-                  <FontAwesomeIcon
+                  <img
                     className="mx-2  icon"
-                    icon={faUser}
-                    title="nadim mahamud"
+                    src={user?.photoURL}
+                    alt=""
+                    title={user?.displayName}
                   />
                   <button onClick={handleLogOut} className="btn btn-primary">
                     Log out
