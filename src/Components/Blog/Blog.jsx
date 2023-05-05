@@ -1,11 +1,18 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import html2pdf from 'html2pdf.js';
 
 const Blog = () => {
+  const handlePdf = () => {
+    const element = document.getElementById('blog-container');
+    html2pdf().from(element).save();
+  };
   return (
-    <Container className="p-5">
+    <Container className="p-5" id="blog-container">
       <p>
-        <button className="btn btn-info">Download pdf</button>
+        <button className="btn btn-info" onClick={handlePdf}>
+          Download pdf
+        </button>
       </p>
       <h5>
         1. Tell us the differences between uncontrolled and controlled
